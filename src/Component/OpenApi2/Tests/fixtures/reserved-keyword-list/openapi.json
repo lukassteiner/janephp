@@ -1,0 +1,19 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Reserved Keyword API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/list": {
+            "get": {
+                "operationId": "list",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    }
+}

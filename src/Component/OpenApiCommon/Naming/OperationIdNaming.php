@@ -29,6 +29,6 @@ class OperationIdNaming implements OperationNamingInterface
         $operationId = (string) $operation->getOperation()->getOperationId();
         $operationId = $this->slugger->slug($operationId, '-');
 
-        return $this->getInflector()->classify($operationId);
+        return OperationNamingHelper::suffixIfReserved($this->getInflector()->classify($operationId), 'Endpoint');
     }
 }
