@@ -20,10 +20,10 @@ class OperationNamingHelper
         return in_array(strtolower($name), self::RESERVED_KEYWORDS, true);
     }
 
-    public static function suffixIfReserved(string $name, string $suffix = 'Endpoint'): string
+    public static function fixClassName(string $name): string
     {
         if (self::isReserved($name)) {
-            return $name . $suffix;
+            return '_' . $name;
         }
 
         return $name;

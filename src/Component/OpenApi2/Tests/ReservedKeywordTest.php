@@ -11,11 +11,11 @@ class ReservedKeywordTest extends TestCase
         $listClassPath = __DIR__ . '/fixtures/reserved-keyword-list/generated/Endpoint/List.php';
         $this->assertFileDoesNotExist($listClassPath);
 
-        $listEndpointClassPath = __DIR__ . '/fixtures/reserved-keyword-list/generated/Endpoint/ListEndpoint.php';
+        $listEndpointClassPath = __DIR__ . '/fixtures/reserved-keyword-list/generated/Endpoint/_List.php';
         $this->assertFileExists($listEndpointClassPath);
 
         // Check for syntax error
         exec('php -l ' . $listEndpointClassPath, $output, $returnVar);
-        $this->assertEquals(0, $returnVar, 'Generated ListEndpoint.php has syntax errors: ' . implode("\n", $output));
+        $this->assertEquals(0, $returnVar, 'Generated _List.php has syntax errors: ' . implode("\n", $output));
     }
 }

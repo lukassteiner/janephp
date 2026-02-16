@@ -84,6 +84,6 @@ class OperationUrlNaming implements OperationNamingInterface
 
     public function getEndpointName(OperationGuess $operation): string
     {
-        return OperationNamingHelper::suffixIfReserved($this->getInflector()->classify($this->getUniqueName($operation)), 'Endpoint');
+        return OperationNamingHelper::fixClassName($this->getInflector()->classify($this->getUniqueName($operation)));
     }
 }
